@@ -1,0 +1,31 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.js",
+  "sources": [
+    "src/*"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/*.js",
+    "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"
+  ],
+  "moduleResolution": "node",
+  "npm": true,
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  },
+  "builds": [{
+    "name": "prod",
+    "js": {"minify": true},
+    "css": {"minify": true},
+    "html": {"minify": true}
+  }],
+  "environment": {
+    "prod": {
+      "apihost": "https://pure-sands-80166.herokuapp.com"
+    }
+  }
+}
